@@ -36,7 +36,24 @@
 </div>
 
 @code {
-    private List<CartItem> Cart = new(); // You can pass data from Menu later
+    [SupplyParameterFromQuery]
+    public string? Name { get; set; }
+
+    [SupplyParameterFromQuery]
+    public decimal? Price { get; set; }
+
+    [SupplyParameterFromQuery]
+    public int? Quantity { get; set; }
+
+    private List<CartItem> Cart => new()
+    {
+        new CartItem
+        {
+            Name = Name ?? "Unknown",
+            Price = Price ?? 0,
+            Quantity = Quantity ?? 0
+        }
+    };
 
     private int TotalQuantity => Cart.Sum(x => x.Quantity);
     private decimal TotalPrice => Cart.Sum(x => x.Price * x.Quantity);

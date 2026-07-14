@@ -61,7 +61,15 @@
     {
         if (item.Quantity > 0)
         {
-            Console.WriteLine($"Added {item.Quantity}x {item.Name}");
+            var selectedItem = new MenuItem
+            {
+                Name = item.Name,
+                Price = item.Price,
+                Quantity = item.Quantity,
+                Image = item.Image
+            };
+
+            NavigationManager.NavigateTo($"/summary?name={Uri.EscapeDataString(selectedItem.Name)}&price={selectedItem.Price}&quantity={selectedItem.Quantity}");
         }
     }
 
