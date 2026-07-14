@@ -1,6 +1,6 @@
 .welcome-screen {
     height: 100vh;
-    background: linear-gradient(135deg, #c8102e, #e30613);
+    background: linear-gradient(135deg, #1d0bb9, #4106e3);
     color: white;
     display: flex;
     flex-direction: column;
