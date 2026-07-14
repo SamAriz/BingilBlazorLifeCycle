@@ -9,7 +9,7 @@
 
 .summary-page h1 {
     text-align: center;
-    color: #c8102e;
+    color: #1d0bb9;
     margin-bottom: 30px;
 }
 
@@ -24,7 +24,7 @@
 .total-section {
     margin-top: 30px;
     padding-top: 20px;
-    border-top: 2px solid #c8102e;
+    border-top: 2px solid #1d0bb9;
 }
 
 .total-row {
@@ -36,7 +36,7 @@
 
 .grand-total {
     font-size: 1.8rem;
-    color: #c8102e;
+    color: #1d0bb9;
 }
 
 .actions {
@@ -55,7 +55,7 @@
 }
 
 .btn-primary {
-    background: #c8102e;
+    background: #1d0bb9;
     color: white;
 }
 

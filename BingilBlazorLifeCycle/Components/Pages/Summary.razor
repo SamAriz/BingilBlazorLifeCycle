@@ -1,4 +1,5 @@
 ﻿@page "/summary"
+@rendermode InteractiveServer
 @inject NavigationManager NavigationManager
 @using Microsoft.AspNetCore.Components
 @using Microsoft.AspNetCore.Components.Routing
@@ -29,6 +30,11 @@
         </div>
     </div>
 
+    @if (!string.IsNullOrWhiteSpace(ConfirmationMessage))
+    {
+        <div class="alert alert-success mt-3">@ConfirmationMessage</div>
+    }
+
     <div class="actions">
         <button class="btn btn-secondary" @onclick="GoBack">← Back to Menu</button>
         <button class="btn btn-primary" @onclick="ConfirmOrder">Confirm Order</button>
@@ -57,12 +63,14 @@
 
     private int TotalQuantity => Cart.Sum(x => x.Quantity);
     private decimal TotalPrice => Cart.Sum(x => x.Price * x.Quantity);
+    private string ConfirmationMessage { get; set; } = string.Empty;
 
     private void GoBack() => NavigationManager.NavigateTo("/menu");
 
     private void ConfirmOrder()
     {
-        Console.WriteLine("Order Confirmed! Total: ₱" + TotalPrice);
+        ConfirmationMessage = $"Order confirmed! Total: ₱{TotalPrice:N2}";
+        StateHasChanged();
     }
 
     public class CartItem
