@@ -1,8 +1,9 @@
-﻿@page "/menu"
-@using Microsoft.AspNetCore.Components
+﻿@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Routing
+@page "/menu"
 @inject NavigationManager NavigationManager
 
-<PageTitle>Menu - Jollibee Kiosk</PageTitle>
+<PageTitle>Ano imo?</PageTitle>
 
 <div class="kiosk-menu">
     <div class="top-bar">
@@ -45,10 +46,7 @@
     {
         MenuItems = new List<MenuItem>
         {
-            new MenuItem { Name = "Chickenjoy Solo", Price = 189, Image = "https://via.placeholder.com/280x180?text=Chickenjoy" },
-            new MenuItem { Name = "Jolly Spaghetti", Price = 149, Image = "https://via.placeholder.com/280x180?text=Spaghetti" },
-            new MenuItem { Name = "Burger Steak", Price = 169, Image = "https://via.placeholder.com/280x180?text=BurgerSteak" },
-            new MenuItem { Name = "Yumburger", Price = 89, Image = "https://via.placeholder.com/280x180?text=Yumburger" }
+            new MenuItem { Name = "Bato ni Darna", Price = 99, Image = "https://via.placeholder.com/280x180?text=Yumburger" }
         };
     }
 
