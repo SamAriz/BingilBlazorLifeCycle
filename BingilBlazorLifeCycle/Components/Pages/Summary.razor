@@ -70,7 +70,7 @@
     private void ConfirmOrder()
     {
         ConfirmationMessage = $"Order confirmed! Total: ₱{TotalPrice:N2}";
-        StateHasChanged();
+        NavigationManager.NavigateTo("/payment");
     }
 
     public class CartItem
